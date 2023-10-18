@@ -3,7 +3,8 @@ const mongoose = require("mongoose")
 const bodyParser = require("body-parser")
 const cors = require("cors")
 
-//routes
+//rotas
+const authRouter = require("./routes/authRoutes")
 //middlewares
 //config
 const dbName = "partytime";
@@ -15,7 +16,7 @@ app.use(express.json());
 app.use(express.static("public"))
 // atrelando a primeira rota
 
-app.use("/api/auth")
+app.use("/api/auth", authRouter);
 
 //coneção ao mongoose
 mongoose.connect(`mongodb://127.0.0.1:27017/${dbName}`, {

@@ -21,3 +21,6 @@ const PartySchema = new mongoose({
         type: mongoose.ObjetcId
     }
 })
+
+const Party = Party.model('party',PartySchema);
+module.exports = Party;
